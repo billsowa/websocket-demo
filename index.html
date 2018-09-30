@@ -42,7 +42,7 @@
             socket.on('chat message', function(msg) {
                     let li = document.createElement('li');
                     let text = document.createTextNode(msg);
-                    li.appendChild(text);
+                    li.appendChild(`userName: ${text}`);
                     messages.appendChild(li);
             });
 		</script>
