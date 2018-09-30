@@ -11,6 +11,7 @@
 			#messages { list-style-type: none; margin: 0; padding: 0; }
 			#messages li { padding: 5px 10px; }
 			#messages li:nth-child(odd) { background: #eee; }
+			.user-entered { font-weight: bold; color: red; }
 		</style>
 	</head>
 	<body>
@@ -29,6 +30,7 @@
 			let li = document.createElement('li');
             let text = document.createTextNode(`${userName} has entered`);
 			li.appendChild(text);
+			li.classList.add('user-entered');
 			messages.appendChild(li);
 			
             form.addEventListener('submit', (e) => {
