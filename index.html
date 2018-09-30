@@ -41,8 +41,8 @@
             });
             socket.on('chat message', function(msg) {
                     let li = document.createElement('li');
-                    let text = document.createTextNode(msg);
-                    li.appendChild(`userName: ${text}`);
+                    let text = document.createTextNode(`userName: ${msg}`);
+                    li.appendChild(text);
                     messages.appendChild(li);
             });
 		</script>
