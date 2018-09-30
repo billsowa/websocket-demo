@@ -24,6 +24,13 @@
             const form = document.getElementById('m');
             const input = form.querySelector('input');
             const messages = document.getElementById('messages');
+			// prompt for user name
+			const userName = prompt('Welcome to the Bill\'s internet chat room. Please enter your name.');
+			let li = document.createElement('li');
+            let text = document.createTextNode(`${userName} has entered`);
+			li.appendChild(text);
+			messages.appendChild(li);
+			
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
                     socket.emit('chat message', input.value);
@@ -31,7 +38,6 @@
                     return false;
             });
             socket.on('chat message', function(msg) {
-                console.log('testing');
                     let li = document.createElement('li');
                     let text = document.createTextNode(msg);
                     li.appendChild(text);
